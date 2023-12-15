@@ -1,10 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/station_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="측정소 명"
+            android:inputType="text"
+            android:autofillHints="customHint" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검색" />
+
+        <Button
+            android:id="@+id/current_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="현재 위치" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/station_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="측정소 명:" />
+
+    <TextView
+        android:id="@+id/station_addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="측정소 주소: " />
+
+    <TextView
+        android:id="@+id/km"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="거리:" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -23,15 +69,19 @@
 
                 <TextView
                     android:id="@+id/pm10"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="미세먼지(pm10)" />
+                    android:gravity="center"
+                    android:text="미세먼지(pm10)"
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/pm10value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:gravity="center"
+                    android:text="정보 없음"
+                    android:textSize="48sp" />
 
             </LinearLayout>
 
@@ -42,15 +92,19 @@
 
                 <TextView
                     android:id="@+id/pm25"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="미세먼지(pm2.5)" />
+                    android:gravity="center"
+                    android:text="미세먼지(pm2.5)"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/pm25value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:gravity="center"
+                    android:text="정보 없음"
+                    android:textSize="48sp"/>
             </LinearLayout>
 
         </TableRow>
@@ -67,15 +121,20 @@
 
                 <TextView
                     android:id="@+id/so2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="아황산가스(so2)" />
+                    android:gravity="center"
+                    android:text="아황산가스(so2)"
+                    android:textSize="20sp"
+                    />
 
                 <TextView
                     android:id="@+id/so2value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:gravity="center"
+                    android:text="정보 없음"
+                    android:textSize="48sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -85,15 +144,19 @@
 
                 <TextView
                     android:id="@+id/co"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="일산화탄소(co)" />
+                    android:gravity="center"
+                    android:text="일산화탄소(co)"
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/covalue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:gravity="center"
+                    android:text="정보 없음"
+                    android:textSize="48sp"/>
             </LinearLayout>
 
         </TableRow>
@@ -110,15 +173,19 @@
 
                 <TextView
                     android:id="@+id/o3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="오존(o3)" />
+                    android:gravity="center"
+                    android:text="오존(o3)"
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/o3value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:gravity="center"
+                    android:text="정보 없음"
+                    android:textSize="48sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -128,19 +195,23 @@
 
                 <TextView
                     android:id="@+id/no2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="이산화질소(no2)" />
+                    android:gravity="center"
+                    android:text="이산화질소(no2)"
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:id="@+id/no2value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:gravity="center"
+                    android:text="정보 없음"
+                    android:textSize="48sp"/>
             </LinearLayout>
 
         </TableRow>
 
     </TableLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
